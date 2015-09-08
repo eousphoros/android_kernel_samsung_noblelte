@@ -3814,8 +3814,7 @@ ssize_t sec_bat_show_attrs(struct device *dev,
 #endif
 #if defined(CONFIG_WIRELESS_FIRMWARE_UPDATE)
 	case BATT_WIRELESS_FIRMWARE_UPDATE:
-		sec_bat_fw_update_work(battery, SEC_WIRELESS_RX_BUILT_IN_MODE);
-		value.intval = SEC_WIRELESS_OTP_FIRM_RESULT;
+		value.intval = SEC_WIRELESS_OTP_FIRM_VERIFY;
 		psy_do_property(battery->pdata->wireless_charger_name, get,
 			POWER_SUPPLY_PROP_MANUFACTURER, value);
 		pr_info("%s RX firmware verify. result: %d\n", __func__, value.intval);
